@@ -1,2 +1,15 @@
 @import "tailwindcss";
 
+/* body {
+ background: linear-gradient(to right, #000000, #1a1a1a);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
