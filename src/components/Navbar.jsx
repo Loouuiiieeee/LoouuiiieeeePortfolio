@@ -26,16 +26,16 @@ const Navbar = () => {
             About Me
           </a>
           <a
-            href="#services"
+            href="#Training & Seminars"
             className="hover:text-gray-300 transition duration-300"
           >
-            Services
+            Training & Seminars
           </a>
           <a
             href="#projects"
             className="hover:text-gray-300 transition duration-300"
           >
-            Projects
+            Skills
           </a>
           <a
             href="#contact"
@@ -71,10 +71,10 @@ const Navbar = () => {
             About Me
           </a>
           <a href="#services" className="block hover:text-gray-300">
-            Services
+            Training & Seminars
           </a>
           <a href="#projects" className="block hover:text-gray-300">
-            Projects
+            Skills
           </a>
           <a href="#contact" className="block hover:text-gray-300">
             Contact

@@ -11,7 +11,8 @@ const About = () => {
       <h1 className="text-4xl font-bold text-center mb-1">About me</h1>
       <div className="flex flex-row ml-26 mb-20">
         <div>
-          <p className="mt-4 text-lg text-gray-300 px-4 md:px-5 flex-1">
+          {/* TODO: FIX THIS REACTIVE */}
+          <p className="mt-4 text-lg text-gray-300 px-4 flex-1">
             Experienced in both traditional coding and low-code software
             development, with a proven track record in the Information
             Technology and Services industry. Proficient in Java (Spring Boot),
@@ -221,6 +222,8 @@ const About = () => {
             </ul>
           </VerticalTimelineElement>
         </VerticalTimeline>
+        <br />
+        <br />
       </div>
     </div>
   );
