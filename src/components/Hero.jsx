@@ -11,10 +11,10 @@ const Hero = () => {
         />
         <h1 className="text-4xl font-bold">
           I'm{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-yellow-500">
             Louiejim Hernandez
           </span>
-          , a Front-End Developer and OutSystems Developer.
+          , a Front-End Developer and OutSystems Developer .
         </h1>
         <p className="mt-4 text-lg text-gray-300 px-4 md:px-32">
           {" "}
