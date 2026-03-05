@@ -2,7 +2,7 @@ import luwijim from "../assets/luwii.png";
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white text-center py-16">
+    <div className="bg-black text-white text-center py-16" id="home">
       <div>
         <img
           src={luwijim}

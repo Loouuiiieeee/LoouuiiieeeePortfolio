@@ -42,7 +42,10 @@ const Skills = () => {
   const slides = chunkArray(skillList, 6); // Each slide = 9 skills
 
   return (
-    <div className="bg-black text-white flex flex-col items-center py-10">
+    <div
+      className="bg-black text-white flex flex-col items-center py-10"
+      id="skills"
+    >
       <h1 className="text-4xl font-bold mb-8 text-center">Skills</h1>
       <Swiper
         modules={[Pagination]}

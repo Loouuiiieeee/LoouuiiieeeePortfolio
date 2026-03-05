@@ -32,7 +32,7 @@ const Navbar = () => {
             Training & Seminars
           </a>
           <a
-            href="#projects"
+            href="#skills"
             className="hover:text-gray-300 transition duration-300"
           >
             Skills
@@ -73,7 +73,7 @@ const Navbar = () => {
           <a href="#services" className="block hover:text-gray-300">
             Training & Seminars
           </a>
-          <a href="#projects" className="block hover:text-gray-300">
+          <a href="#skills" className="block hover:text-gray-300">
             Skills
           </a>
           <a href="#contact" className="block hover:text-gray-300">

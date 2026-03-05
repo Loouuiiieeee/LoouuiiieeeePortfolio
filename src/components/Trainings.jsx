@@ -45,7 +45,7 @@ const trainings = [
 
 const Trainings = () => {
   return (
-    <div className="bg-black text-white item-center ">
+    <div className="bg-black text-white item-center " id="Training & Seminars">
       <h1 className="text-4xl font-bold text-center mb-12 mt ">
         Trainings & Seminars
       </h1>

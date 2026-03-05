@@ -7,7 +7,7 @@ import { AlvIcon, SevenSevenIcon } from "../util/Icons";
 
 const About = () => {
   return (
-    <div className="bg-black text-white item-center">
+    <div className="bg-black text-white item-center" id="about">
       <h1 className="text-4xl font-bold text-center mb-1">About me</h1>
       <div className="flex flex-row ml-26 mb-20">
         <div>
