@@ -1,6 +1,32 @@
-import { FaEnvelope, FaMapMarked, FaPhone } from "react-icons/fa";
+import { useToast } from "@inspectph/react-toast-sileo";
+import {
+  FaCheckCircle,
+  FaEnvelope,
+  FaMapMarked,
+  FaPhone,
+} from "react-icons/fa";
 
 const Contact = () => {
+  const { success } = useToast();
+
+  const handleSubmit = (e) => {
+    const form = e.target;
+    const name = form.elements.name.value;
+    const email = form.elements.email.value;
+    const message = form.elements.message.value;
+
+    console.log({ name, email, message });
+    e.preventDefault();
+    success({
+      title: "Success!",
+      description: "Your message has been sent!",
+      fill: "white",
+      duration: 3000,
+      icon: <FaCheckCircle />,
+    });
+
+    e.target.reset();
+  };
   return (
     <section className="bg-black text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -46,21 +72,27 @@ const Contact = () => {
 
           {/* Right Side - Contact Form */}
           <div className="flex-1 w-full">
-            <form className="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6">
+            <form
+              className="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6"
+              onSubmit={handleSubmit}
+            >
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-violet-400"
               />
 
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
               />
 
               <textarea
                 rows="5"
+                name="message"
                 placeholder="Your Message"
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
               />
