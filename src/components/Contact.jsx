@@ -7,6 +7,9 @@ import {
   FaPhone,
 } from "react-icons/fa";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Contact = () => {
   const { success, warning } = useToast();
 
@@ -51,6 +54,10 @@ const Contact = () => {
     setIsSubmit(false);
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 1500 }); // animation duration
+  }, []);
+
   return (
     <section className="bg-black text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -61,7 +68,7 @@ const Contact = () => {
 
         <div className="flex flex-col md:flex-row gap-12 items-start">
           {/* Left Side - Contact Info */}
-          <div className="flex-1 space-y-6">
+          <div className="flex-1 space-y-6" data-aos="fade-right">
             <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-yellow-500">
               Let's Discuss Your Project
             </h3>
@@ -95,7 +102,7 @@ const Contact = () => {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full" data-aos="fade-left">
             <form
               className="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6"
               onSubmit={handleSubmit}

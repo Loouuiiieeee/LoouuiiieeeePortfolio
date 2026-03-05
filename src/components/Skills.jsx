@@ -3,6 +3,10 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import { useEffect } from "react";
 import AngularLogo from "../assets/Icons/angular.png";
 import AtomLogo from "../assets/Icons/atom.png";
 import AvatarLogo from "../assets/Icons/avatar.png";
@@ -41,6 +45,10 @@ const Skills = () => {
 
   const slides = chunkArray(skillList, 6); // Each slide = 9 skills
 
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
     <div
       className="bg-black text-white flex flex-col items-center py-10"
@@ -53,6 +61,7 @@ const Skills = () => {
         slidesPerView={1} // 1 slide per 3x3 grid
         pagination={{ clickable: true }}
         className="w-4/5"
+        data-aos="fade-up"
       >
         {slides.map((group, idx) => (
           <SwiperSlide key={idx}>

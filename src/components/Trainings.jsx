@@ -1,3 +1,7 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const trainings = [
   {
     id: 1,
@@ -44,6 +48,10 @@ const trainings = [
 ];
 
 const Trainings = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1500 }); // animation duration
+  }, []);
+
   return (
     <div className="bg-black text-white item-center " id="Training & Seminars">
       <h1 className="text-4xl font-bold text-center mb-12 mt ">
@@ -54,6 +62,7 @@ const Trainings = () => {
           <div>
             <div
               key={training.id}
+              data-aos="fade-up"
               className="bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform transition-transform duration-300 hover:scale-105 p-5"
             >
               <h3 className="mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
