@@ -9,10 +9,9 @@ const About = () => {
   return (
     <div className="bg-black text-white item-center" id="about">
       <h1 className="text-4xl font-bold text-center mb-1">About me</h1>
-      <div className="flex flex-row ml-26 mb-20">
-        <div>
-          {/* TODO: FIX THIS REACTIVE */}
-          <p className="mt-4 text-lg text-gray-300 px-4 flex-1">
+      <div className="flex flex-col md:flex-row md:ml-24 mb-20">
+        <div className="flex-1 px-4">
+          <p className="mt-4 text-lg text-gray-300">
             Experienced in both traditional coding and low-code software
             development, with a proven track record in the Information
             Technology and Services industry. Proficient in Java (Spring Boot),
