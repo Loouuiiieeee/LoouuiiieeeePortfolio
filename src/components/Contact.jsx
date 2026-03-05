@@ -1,5 +1,5 @@
 import { useToast } from "@inspectph/react-toast-sileo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaCheckCircle,
   FaEnvelope,
@@ -11,9 +11,11 @@ const Contact = () => {
   const { success } = useToast();
 
   const [error, setError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmit(true);
     const form = e.target;
     const name = form.elements.name.value;
     const email = form.elements.email.value;
@@ -30,8 +32,6 @@ const Contact = () => {
       return;
     }
 
-    setError({});
-
     console.log({ name, email, message });
     success({
       title: "Success!",
@@ -42,7 +42,14 @@ const Contact = () => {
     });
 
     e.target.reset();
+    setError({});
+    setIsSubmit(false);
   };
+
+  useEffect(() => {
+    setIsSubmit(false);
+  }, []);
+
   return (
     <section className="bg-black text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -99,7 +106,7 @@ const Contact = () => {
                   placeholder="Your Name"
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-violet-400"
                 />
-                {error.name && (
+                {isSubmit && error.name && (
                   <span className="text-red-500 text-sm mt-1">
                     {error.name}
                   </span>
@@ -112,7 +119,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
                 />
-                {error.email && (
+                {isSubmit && error.email && (
                   <span className="text-red-500 text-sm mt-1">
                     {error.email}
                   </span>
@@ -125,7 +132,7 @@ const Contact = () => {
                   placeholder="Your Message"
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
                 />
-                {error.message && (
+                {isSubmit && error.message && (
                   <span className="text-red-500 text-sm mt-1">
                     {error.message}
                   </span>
