@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
-      <div className="border-t border-gray-600 pt-4 flex flex-col md:flex-row justify-between items-center">
+      <div className="border-t border-gray-600 pt-4 flex flex-col md:flex-row justify-between items-center mr-5 ml-5">
         <p className="text-gray-400">
           &copy; {new Date().getFullYear()} Louiejim, All rights reserved.
         </p>
@@ -17,7 +17,10 @@ const Footer = () => {
           <a href="#" className="text-gray-400 hover:text-white">
             <FaLinkedinIn />
           </a>
-          <a href="#" className="text-gray-400 hover:text-white">
+          <a
+            href="https://github.com/Loouuiiieeee"
+            className="text-gray-400 hover:text-white"
+          >
             <FaGithub />
           </a>
         </div>

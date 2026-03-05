@@ -1,14 +1,14 @@
 import { useToast } from "@inspectph/react-toast-sileo";
 import { useEffect, useState } from "react";
 import {
-  FaCheckCircle,
   FaEnvelope,
+  FaExclamationTriangle,
   FaMapMarked,
   FaPhone,
 } from "react-icons/fa";
 
 const Contact = () => {
-  const { success } = useToast();
+  const { success, warning } = useToast();
 
   const [error, setError] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -33,12 +33,13 @@ const Contact = () => {
     }
 
     console.log({ name, email, message });
-    success({
-      title: "Success!",
-      description: "Your message has been sent!",
+    warning({
+      title: "Warning!",
+      description: "Temporary Disable !",
       fill: "white",
       duration: 5000,
-      icon: <FaCheckCircle />,
+      icon: <FaExclamationTriangle />,
+      // icon: <FaCheckCircle />,
     });
 
     e.target.reset();
