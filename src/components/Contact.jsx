@@ -1,4 +1,5 @@
 import { useToast } from "@inspectph/react-toast-sileo";
+import { useState } from "react";
 import {
   FaCheckCircle,
   FaEnvelope,
@@ -9,14 +10,29 @@ import {
 const Contact = () => {
   const { success } = useToast();
 
+  const [error, setError] = useState({});
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.target;
     const name = form.elements.name.value;
     const email = form.elements.email.value;
     const message = form.elements.message.value;
 
+    const newErrors = {};
+
+    if (!name) newErrors.name = "Name is required";
+    if (!email) newErrors.email = "Email is required";
+    if (!message) newErrors.message = "Message is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setError(newErrors);
+      return;
+    }
+
+    setError({});
+
     console.log({ name, email, message });
-    e.preventDefault();
     success({
       title: "Success!",
       description: "Your message has been sent!",
@@ -76,27 +92,45 @@ const Contact = () => {
               className="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6"
               onSubmit={handleSubmit}
             >
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-violet-400"
-              />
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
-              />
-
-              <textarea
-                rows="5"
-                name="message"
-                placeholder="Your Message"
-                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
-              />
-
+              <div className="flex flex-col">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-violet-400"
+                />
+                {error.name && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {error.name}
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
+                />
+                {error.email && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {error.email}
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <textarea
+                  rows="5"
+                  name="message"
+                  placeholder="Your Message"
+                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400"
+                />
+                {error.message && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {error.message}
+                  </span>
+                )}
+              </div>
               <button
                 type="submit"
                 className="w-full bg-gradient-to-r from-violet-400 to-yellow-500 py-3 rounded-lg font-semibold transform transition duration-300 hover:scale-105"
