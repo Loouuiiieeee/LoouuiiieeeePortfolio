@@ -13,6 +13,7 @@
     "@inspectph/react-toast-sileo": "^0.0.2",
     "@tailwindcss/vite": "^4.2.1",
     "@tailwindplus/elements": "^1.0.22",
+    "aos": "^2.3.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.6.0",
