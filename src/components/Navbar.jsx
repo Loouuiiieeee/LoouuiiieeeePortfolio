@@ -45,7 +45,15 @@ const Navbar = () => {
           </a>
 
           {/* CTA Button */}
-          <button className="ml-4 bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+          <button
+            className="ml-4 bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition duration-300 cursor-pointer"
+            type="submit"
+            onClick={() =>
+              document
+                .getElementById("contact")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             Contact Me
           </button>
         </div>

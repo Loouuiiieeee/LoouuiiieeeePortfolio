@@ -37,7 +37,7 @@ const Contact = () => {
       title: "Success!",
       description: "Your message has been sent!",
       fill: "white",
-      duration: 3000,
+      duration: 5000,
       icon: <FaCheckCircle />,
     });
 
@@ -140,7 +140,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-violet-400 to-yellow-500 py-3 rounded-lg font-semibold transform transition duration-300 hover:scale-105"
+                className="w-full bg-gradient-to-r from-violet-400 to-yellow-500 py-3 rounded-lg font-semibold transform transition duration-300 hover:scale-105 cursor-pointer"
               >
                 Send Message
               </button>

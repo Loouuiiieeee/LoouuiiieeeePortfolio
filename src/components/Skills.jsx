@@ -60,7 +60,7 @@ const Skills = () => {
               {group.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800 rounded-lg p-4 flex flex-col justify-center items-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300"
+                  className="bg-gray-800 rounded-lg p-4 flex flex-col justify-center items-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300 cursor-pointer"
                 >
                   <img
                     src={skill.img}

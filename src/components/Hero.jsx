@@ -1,6 +1,9 @@
+import { useToast } from "@inspectph/react-toast-sileo";
+import { FaTimesCircle } from "react-icons/fa";
 import luwijim from "../assets/luwii.png";
-
 const Hero = () => {
+  const { error } = useToast();
+
   return (
     <div className="bg-black text-white text-center py-16" id="home">
       <div>
@@ -29,11 +32,22 @@ const Hero = () => {
                 .getElementById("contact")
                 .scrollIntoView({ behavior: "smooth" })
             }
-            className="bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
+            className="bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full cursor-pointer"
           >
             Contact With Me
           </button>
-          <button className="bg-gradient-to-r from-rose-400 to-orange-500 text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full">
+          <button
+            className="bg-gradient-to-r from-rose-400 to-orange-500 text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full cursor-pointer"
+            onClick={() => {
+              error({
+                title: "error!",
+                description: "Temporary Disable!",
+                fill: "white",
+                duration: 5000,
+                icon: <FaTimesCircle />,
+              });
+            }}
+          >
             Resume
           </button>
         </div>
